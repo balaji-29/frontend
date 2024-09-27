@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Watchlist</title>
+    <script
+      src="https://kit.fontawesome.com/567d94c80a.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        list-style: none;
+      }
+      .main-cont {
+        height: 100vh;
+        background-color: #2e2e2e;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+      }
+      .anime-wlist {
+        height: 100px;
+        width: 500px;
+        background-color: blue;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+
+      .watchlist {
+        height: 500px;
+        width: 500px;
+        background-color: burlywood;
+        text-align: center;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      h3 {
+        border: 2px dotted rebeccapurple;
+        padding: 1rem;
+        box-shadow: 5px 5px 5px black;
+      }
+      .search-bar {
+        height: 100px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+      }
+
+      #input-bar {
+        border-radius: 30px;
+        background-color: transparent;
+        height: 40px;
+        width: 250px;
+        text-align: center;
+        font-size: large;
+      }
+      .add-btn {
+        width: 80px;
+        height: 40px;
+        padding: 3px;
+        border-radius: 30px;
+      }
+      #al {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem+;
+      }
+      .items {
+        display: flex;
+        font-size: 30px;
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+        border: 2px dotted rebeccapurple;
+        padding: 1rem;
+        box-shadow: 5px 5px 5px black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-cont">
+      <div class="anime-wlist">
+        <div class="search-bar">
+          <input id="input-bar" type="text" placeholder="search anime" />
+        </div>
+
+        <button class="add-btn" onclick="clicker()">ADD</button>
+      </div>
+      <div class="watchlist">
+        <h3>Your Watchlist</h3>
+        <ul id="al">
+          <li class="items">
+            <div>dragon ball Z</div>
+            <div>
+              <i class="fa-solid fa-x" onclick="removebtn(event)"></i>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      let btn = document.getElementsByClassName("add-btn");
+      let ulist = document.getElementById("al");
+      console.log(ulist);
+
+      function clicker() {
+        let anime_name = document.getElementById("input-bar").value;
+        console.log("anime_name: ", anime_name);
+        let list = document.createElement("li");
+        list.className = "items";
+        let Div = document.createElement("div");
+        Div.textContent = anime_name;
+
+        let Removebtn = document.createElement("div");
+        Removebtn.innerHTML = `<i class="fa-solid fa-x"></i>`;
+
+        Div.append(Removebtn);
+        list.append(Div, Removebtn);
+        console.log(list);
+        ulist.append(list);
+
+        Removebtn.parentElement.setAttribute("onclick", "removebtn(event)");
+      }
+      function removebtn(event) {
+        let removeElement = event.target.parentNode.parentNode;
+        removeElement.remove();
+      }
+    </script>
+  </body>
+</html>

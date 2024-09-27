@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>counter</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .main-box {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+      }
+      h1 {
+        background-color: blue;
+        height: 100px;
+        width: 100px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
+      .bts {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
+      .btn {
+        border-radius: 50px;
+        padding: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-box">
+      <h1 class="h1">0</h1>
+      <div class="bts">
+        <button class="btn btn-1" onclick="increase()">+</button>
+        <button class="btn btn-2" onclick="reset()">reset</button>
+        <button class="btn btn-3" onclick="decrease()">-</button>
+      </div>
+    </div>
+    <script>
+      let count = 0;
+      document.querySelector(".h1");
+
+      function increase() {
+        count++;
+        document.querySelector("h1").textContent = count;
+      }
+
+      function decrease() {
+        count--;
+        document.querySelector("h1").textContent = count;
+      }
+      function reset() {
+        count = 0;
+        document.querySelector("h1").textContent = count;
+      }
+    </script>
+  </body>
+</html>

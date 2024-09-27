@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>grid</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .main-cont {
+        height: 100vh;
+        display: grid;
+
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: center;
+        align-items: center;
+      }
+      .c {
+        justify-content: center;
+        align-items: center;
+      }
+      .c1 {
+        background-color: bisque;
+        width: auto;
+        height: 100px;
+      }
+      .c2 {
+        background-color: blue;
+        width: auto;
+        height: 100px;
+      }
+      .c3 {
+        background-color: red;
+        width: auto;
+        height: 100px;
+      }
+      .c4 {
+        background-color: gray;
+        width: auto;
+        height: 100px;
+      }
+      .c5 {
+        background-color: green;
+        width: auto;
+        height: 100px;
+      }
+      .c6 {
+        background-color: pink;
+        width: auto;
+        height: 100px;
+      }
+      i {
+        background-color: blue;
+        height: 100px;
+        width: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-cont">
+      <div class="c c1">c1</div>
+      <div class="c c2">c2</div>
+      <div class="c c3">c3</div>
+      <div class="c c4">c4</div>
+      <div class="c c5">c5</div>
+      <div class="c c6">c6</div>
+
+      <i class="fa-brands fa-font-awesome">beer</i>
+    </div>
+  </body>
+</html>

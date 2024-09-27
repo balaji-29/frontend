@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dragon Ball Super</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-image: linear-gradient(indigo, black);
+      }
+
+      .main-cont {
+        height: 100vh;
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: center;
+        align-items: center;
+      }
+
+      img {
+        width: 500px;
+        height: 80vh;
+      }
+
+      .universe-11 {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+      .universe-7 {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+      .title {
+        color: aqua;
+        font-size: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+      }
+      .btns {
+        padding: 10px;
+        color: black;
+        display: flex;
+        justify-content: center;
+
+        gap: 3rem;
+      }
+      .btn {
+        padding: 10px;
+        height: 50px;
+        width: auto;
+        border-radius: 50px;
+        background-color: orange;
+      }
+      .btn:hover {
+        box-shadow: 5px 5px 50px 6px #fbbf24, 10px 10px 100px 10px #fef08a;
+      }
+      .name {
+        display: flex;
+        color: yellow;
+        justify-content: center;
+        align-items: center;
+        border: 3px dashed orangered;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-cont">
+      <div class="grid-cont universe-11">
+        <img src="universe 11.jpg" class="u11" alt="" />
+      </div>
+      <div class="title grid-cont">
+        <p>
+          Tournament of <br />
+          power
+        </p>
+      </div>
+      <div class="grid-cont universe-7">
+        <img src="universe 7.jpg" class="u7" alt="" />
+      </div>
+
+      <div class="uni-11-name name">Universe 11</div>
+      <div class="btns">
+        <button class="btn universe-11-btn">Universe 11</button>
+        <button class="btn universe-7-btn">Universe 7</button>
+      </div>
+      <div class="uni-7-name name">Universe 7</div>
+    </div>
+
+    <script>
+      let u7 = document.querySelector(".universe-7");
+      let u7_img = document.querySelector(".u7");
+      let u11 = document.querySelector(".universe-11");
+      let u11_img = document.querySelector(".u11");
+      let u7_dispname = document.querySelector(".uni-7-name");
+      let u11_dispname = document.querySelector(".uni-11-name");
+      console.log(u7_img);
+      let universe_7_btn = document.querySelector(".universe-7-btn");
+      let universe_11_btn = document.querySelector(".universe-11-btn");
+      let universe_cimg = [
+        {
+          goku: "goku.jpg",
+          gohan: "Gohan.jpg",
+          beerus: "Beerus.jpg",
+          buu: "Buu.jpg",
+          freeza: "FREEZA.jpg",
+          krilin: "krilin.jpg",
+          roshi: "Master Roshi.jpg",
+          picollo: "picollo.jpg",
+          tien: "Tien Shinhan.jpg",
+          vegeta: "vegeta.jpg",
+          whis: "Whis.jpg",
+        },
+        {
+          top: "Top.jpg",
+          belmod: "Belmod.jpg",
+          kefla: "kefla.jpg",
+          dyspo: "Dyspo.jpg",
+          kettle: "Kettle.jpg",
+          marcarita: "Marcarita.jpg",
+          hit: "Hit.jpg",
+          jiren: "jiren.jpg",
+          vueon: "Vueon.jpg",
+          cocotte: "cocotte.jpg",
+          kahseral: "Kahseral.jpg",
+          aragney: "Aragney.jpg",
+        },
+      ];
+
+      let universe_cname = [
+        [
+          "goku",
+          "gohan",
+          "beerus",
+          "buu",
+          "freeza",
+          "krilin",
+          "roshi",
+          "picollo",
+          "tien",
+          "vegeta",
+          "whis",
+        ],
+        [
+          "top",
+          "belmod",
+          "kefla",
+          "dyspo",
+          "kettle",
+          "marcarita",
+          "hit",
+          "jiren",
+          "vueon",
+          "cocotte",
+          "kahseral",
+          "aragney",
+        ],
+      ];
+
+      universe_7_btn.addEventListener("click", () => {
+        let name_u7 =
+          universe_cname[0][
+            Math.floor(Math.random() * universe_cname[0].length)
+          ];
+        u7_img.src = universe_cimg[0][name_u7];
+        u7_dispname.innerHTML = name_u7;
+      });
+
+      universe_11_btn.addEventListener("click", () => {
+        let name_u11 =
+          universe_cname[1][
+            Math.floor(Math.random() * universe_cname[1].length)
+          ];
+        u11_img.src = universe_cimg[1][name_u11];
+        u11_dispname.innerHTML = name_u11;
+        console.log(u11_dispname);
+      });
+    </script>
+  </body>
+</html>
